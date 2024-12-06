@@ -12,7 +12,8 @@ Before you can deploy and configure the solution, ensure you have the following:
 
 2. **Azure DevOps Account**  
    An active Azure DevOps account is required to configure and run the CI/CD pipelines. You can create an Azure DevOps account [here](https://dev.azure.com/).
-3, **A PAT In Azure Devops.**
+   
+3. **A PAT In Azure Devops.**
    A Personal Access Token (PAT) with the necessary permissions.
 
 
@@ -29,7 +30,7 @@ The repository consists of the following key components, each hosted in its own 
    This repository contains the core containerized application code. It holds the Dockerfiles, application source code, and related configuration files needed to build and deploy the application to Azure Container Apps (ACA).
 
 3. **[ca-azazure-template](https://github.com/ArmanMollaei/ca-azazure-template)**:  
-   This repository contains the Azure Resource Manager (ARM) templates used to provision Azure resources such as Azure Container Registry (ACR), Azure Container Apps (ACA), and the ACR service connection. The templates define the infrastructure needed for the application.
+   This repository contains the Azure Resource Manager (ARM) templates used to provision Azure resources such as Azure Container Registry (ACR), Azure Container Apps (ACA), and the Azure Devops service connection. The templates define the infrastructure needed for the application.
 
 
 
@@ -40,32 +41,23 @@ The repository consists of the following key components, each hosted in its own 
 - Go to your GitHub repository.
 - Click on the **Fork** button in the top-right corner to create a copy of the repository under your GitHub account.
 
-### 2. Clone the Forked Repository to Your Local Machine
-- Clone both repositories using the following command:
-  ```
-  git clone https://github.com/ArmanMollaei/ca-azazure-template.git
-  git clone https://github.com/ArmanMollaei/ca-repo
-  ```
-
-### 3. Create an Azure DevOps Project
+### 2. Create an Azure DevOps Project
 Sign in to Azure DevOps.
 Create a new project to host the repo and pipelines.
 
-### 4. Import both GitHub repositories into Azure DevOps.
+### 3. Import both GitHub repositories into Azure DevOps.
 In your Azure DevOps project, navigate to Repos. 
-Click on Import Repository and enter the URL of your forked GitHub repository adn do this for both repositories.
-  ```
-  git clone https://github.com/ArmanMollaei/ca-azazure-template.git
-  git clone https://github.com/ArmanMollaei/ca-repo
-  ```
+Click on Import Repository and enter the URL of your forked GitHub repository and do this for both repositories:
+  * [ca-repo](https://github.com/ArmanMollaei/ca-repo)
+  * [ca-azazure-template](https://github.com/ArmanMollaei/ca-azazure-template)
 
-### 5. Generate a Personal Access Token (PAT)
+### 4. Generate a Personal Access Token (PAT)
 - Go to your Azure DevOps account.
 - Navigate to **User Settings** > **Personal Access Tokens**.
 - Click on **New Token** and generate a token with `Read, query, & manage` access to manage Service Connections.
 - Copy the generated token. 
 
-### 6. Add the PAT as a Variable in Azure DevOps Library
+### 5. Add the PAT as a Variable in Azure DevOps Library
 - In your Azure DevOps project, navigate to **Pipelines** > **Library**.
 - Click on **+ Variable Group** to create a new variable group and name it `CI`.
 - Add a variable named `PAT` and paste the generated token as its value.
