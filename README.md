@@ -181,6 +181,4 @@ After creating the service connection, you will be able to run pipelines that in
 
 
 
-• High-level documentation explaining the overall architecture of the solution implemented.
-We'd love that you are rewarded for your effort by sharing your best work online as part of your
-personal portfolio, but please be so kind as to remove references to Capgemini first!
+
