@@ -12,7 +12,8 @@ Before you can deploy and configure the solution, ensure you have the following:
 
 2. **Azure DevOps Account**  
    An active Azure DevOps account is required to configure and run the CI/CD pipelines. You can create an Azure DevOps account [here](https://dev.azure.com/).
-
+3, **A PAT In Azure Devops.**
+   A Personal Access Token (PAT) with the necessary permissions.
 
 
 Make sure you have the necessary permissions to create and manage resources in Azure and to configure and execute pipelines in Azure DevOps.
@@ -58,6 +59,17 @@ Click on Import Repository and enter the URL of your forked GitHub repository ad
   git clone https://github.com/ArmanMollaei/ca-repo
   ```
 
+### 5. Generate a Personal Access Token (PAT)
+- Go to your Azure DevOps account.
+- Navigate to **User Settings** > **Personal Access Tokens**.
+- Click on **New Token** and generate a token with `Read, query, & manage` access to manage Service Connections.
+- Copy the generated token. 
+
+### 6. Add the PAT as a Variable in Azure DevOps Library
+- In your Azure DevOps project, navigate to **Pipelines** > **Library**.
+- Click on **+ Variable Group** to create a new variable group and name it `CI`.
+- Add a variable named `PAT` and paste the generated token as its value.
+- Make sure to mark the `PAT` variable as **secret** to keep it secure.
 
 
 
