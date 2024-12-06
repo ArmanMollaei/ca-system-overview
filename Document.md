@@ -1,4 +1,4 @@
-# High-Level Architecture of the Solution
+# Architecture of the Solution
 
 ## Cloud:
 I prefer to use Azure Cloud , but we can also use other cloud providers like AWS or GCP.
