@@ -64,10 +64,117 @@ Click on Import Repository and enter the URL of your forked GitHub repository an
 - Make sure to mark the `PAT` variable as **secret** to keep it secure.
 
 
+### 6. Set Up Azure Pipelines
+
+#### For ac-azazure-template Pipeline:
+- Go to Pipelines in your Azure DevOps project (e.g., ac-azazure-template).
+- Click New Pipeline.
+- Choose Azure Repos Git as the source.
+- Select the ca-azazure-template repo from the list.
+- Choose Existing Azure Pipeline YAML file.
+- Define the branch as main and specify the path to the pipeline YAML file:
+- Path: /azure-pipelines.yml
+- Azure DevOps will use this YAML file to define your pipeline.
+
+#### For ac-repo Pipeline in main Branch:
+- Go to Pipelines in your Azure DevOps project (e.g., ac-repo).
+-Click New Pipeline.
+- Choose Azure Repos Git as the source.
+- Select the ca-azazure-template repo from the list.
+- Choose Existing Azure Pipeline YAML file.
+- Define the branch as main and specify the path to the pipeline YAML file:
+- Path: /azure-pipelines.yml
+- Azure DevOps will use this YAML file to define your pipeline.
+
+#### For ac-repo Pipeline in dev Branch:
+- Go to Pipelines in your Azure DevOps project (e.g., ac-repo).
+- Click New Pipeline.
+- Choose Azure Repos Git as the source.
+- Select the ca-azazure-template repo from the list.
+- Choose Existing Azure Pipeline YAML file.
+- Define the branch as dev and specify the path to the pipeline YAML file:
+- Path: /azure-pipelines.yml
+- Azure DevOps will use this YAML file to define your pipeline.
+- And edit this pipline and click on settings and change name of pipline to dev
 
 
 
 
+
+
+### 7. Set Up Service Connection Between Azure DevOps and Azure Cloud
+
+Before running pipelines, you need to create a connection between Azure DevOps and Azure Cloud by setting up an **Azure Resource Manager** service connection. Follow these steps:
+
+#### 1. Create Service Connection in Azure DevOps
+
+##### Step 1: Go to Azure DevOps
+- In your Azure DevOps project, go to **Project Settings**.
+- Navigate to **Service Connections** under **Pipelines**.
+
+##### Step 2: Add a New Service Connection
+- Click on **New Service Connection**.
+- Select **Azure Resource Manager**.
+- Choose the **Identity type** as **App registration or managed identity (manual)**.
+- Set **Credential** to **Workload identity federation**.
+
+##### Step 3: Configure Service Connection
+- **Service connection name**: `AzureDevops-ServiceConnection` (You can choose any name).
+- **Description**: (Optional)
+  
+Click **Next**.
+
+##### Step 4: Provide Azure Subscription Details
+- **Subscription ID**: Enter your Azure Subscription ID.
+- **Subscription Name**: Enter your Azure Subscription Name.
+- **Application (Client) ID**: Enter the **Client ID** of the Azure App you create (described below).
+- **Directory (Tenant) ID**: Enter the **Tenant ID** of the Azure App you create.
+
+Click **Next**.
+
+#### 2. Create the Azure App (Service Principal)
+
+##### Step 1: Go to Azure Active Directory
+- Sign in to the [Azure portal](https://portal.azure.com).
+- Go to **Azure Active Directory**.
+
+##### Step 2: Register a New Application
+- Click **Add** > **App Registration**.
+- Fill in the required data for the application:
+  - **Name**: Choose a name for the app (e.g., `AzureDevOpsApp`).
+  - **Supported account types**: Select **Accounts in this organizational directory only**.
+  - **Redirect URI**: Leave it empty (or specify if required).
+
+##### Step 3: Get Azure App Details
+- After registration, go to the **Overview** page of your app and note down the following details:
+  - **Application (Client) ID**
+  - **Directory (Tenant) ID**
+
+#### 3. Set Up Federated Credentials for Workload Identity Federation
+
+##### Step 1: Set Up Federated Credentials
+- Go to **Certificates & Secrets** for the application.
+- Go to the **Federated Credentials** tab.
+- Click **Add** and fill in the details:
+  - **Issuer**: Use the issuer URL provided by Azure DevOps for the service connection.
+  - **Subject Identifier**: Enter the subject identifier from Azure DevOps that corresponds to the service connection you want to create.
+
+#### Step 3: Grant Access to the Application
+
+1. Go to your **Azure Subscription** and navigate to the **Access control (IAM)** section.
+2. Click on **Add role assignment**.
+3. Under **Privileged administrator roles**, select either **Reader** or **Contributor**, depending on the level of access needed.
+4. Click **Next**, then select **Members**.
+5. Search for the Azure app you created, select it, and click **Save** to grant access.
+
+#### 4. Finalize Service Connection Setup
+
+- Once the above steps are completed, return to Azure DevOps and click **Verify and Save** to finalize the creation of your **Azure Resource Manager** service connection.
+- The service connection should now be available for use in your pipelines.
+
+---
+
+After creating the service connection, you will be able to run pipelines that interact with Azure resources.
 
 
 
