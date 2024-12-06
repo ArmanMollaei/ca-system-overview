@@ -1,5 +1,8 @@
 # High-Level Architecture of the Solution
 
+## Cloud:
+I prefer to use Azure Cloud , but we can also use other cloud providers like AWS or GCP.
+
 ## Infrastructure Architecture:
 
 The solution leverages Azure Container Registry (ACR), Azure Container Apps (ACA), Azure DevOps, and Resource Groups to implement a modern, scalable, and efficient application delivery pipeline. The architecture ensures that containerized applications are built, stored, and deployed seamlessly in a secure and controlled manner.
