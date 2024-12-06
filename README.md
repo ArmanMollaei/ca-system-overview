@@ -3,6 +3,19 @@
 
 This repository automates the provisioning of Azure resources for containerized applications. It includes an Azure DevOps pipeline and ARM templates to streamline the process of creating and deploying key Azure resources such as Azure Container Registry (ACR), Azure Container Apps (ACA), and ACR service connections. The solution is designed to help automate the creation and deployment of containerized workloads while ensuring security and scalability in the cloud environment.
 
+## Prerequisites
+
+Before you can deploy and configure the solution, ensure you have the following:
+
+1. **Azure Cloud Account**  
+   You will need an active Azure Cloud account to provision resources like Azure Container Registry (ACR) and Azure Container Apps (ACA). If you don’t have an account, you can create one [here](https://azure.microsoft.com/en-us/free/).
+
+2. **Azure DevOps Account**  
+   An active Azure DevOps account is required to configure and run the CI/CD pipelines. You can create an Azure DevOps account [here](https://dev.azure.com/).
+
+
+
+Make sure you have the necessary permissions to create and manage resources in Azure and to configure and execute pipelines in Azure DevOps.
 
 ## Repository Structure
 
