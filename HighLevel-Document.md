@@ -65,3 +65,16 @@ The stages are shown in the image below:
 
 
 
+Final deployment picture:
+
+<img width="1438" alt="Screenshot 2024-12-06 at 11 02 15 AM" src="https://github.com/user-attachments/assets/d9bcf183-4c07-443f-915c-4b078ae12560">
+
+
+
+<img width="1440" alt="Screenshot 2024-12-06 at 11 04 59 AM" src="https://github.com/user-attachments/assets/1e16440e-b41e-440d-98bc-618836f00c44">
+
+<img width="1440" alt="Screenshot 2024-12-06 at 11 04 09 AM" src="https://github.com/user-attachments/assets/2a1ca29d-9973-4e60-a511-63b4b740bf45">
+
+
+
+
