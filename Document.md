@@ -5,7 +5,7 @@ I prefer to use Azure Cloud , but we can also use other cloud providers like AWS
 
 ## High-level Design:
 
-![Untitled Diagram](https://github.com/user-attachments/assets/d685457b-065e-4935-9cb2-2041f1afd933)
+![pip](https://github.com/user-attachments/assets/d2b45280-2911-4acf-bba1-21b9aed23c49)
 
 
 ## Infrastructure Architecture:
