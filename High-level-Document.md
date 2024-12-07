@@ -5,9 +5,14 @@ I prefer to use Azure Cloud , but we can also use other cloud providers like AWS
 
 ## High-level Design:
 
-### Application-CI
+### Application-Pipleline
 
 ![Capgemini-CI-App](https://github.com/user-attachments/assets/5b1cff79-cded-4eec-bed9-5ca7e149ff82)
+
+
+### Infra-Pipleline
+
+![Capgemini-CI-Infra](https://github.com/user-attachments/assets/a3b1f027-1394-4591-b634-f46442ecec92)
 
 
 
