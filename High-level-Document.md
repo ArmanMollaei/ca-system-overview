@@ -8,6 +8,9 @@ I prefer to use Azure Cloud , but we can also use other cloud providers like AWS
 ![pip](https://github.com/user-attachments/assets/d2b45280-2911-4acf-bba1-21b9aed23c49)
 
 
+![Capgemini-infra](https://github.com/user-attachments/assets/bec36e8b-37ec-46c2-9856-3e4194df1b04)
+
+
 ## Infrastructure Architecture:
 
 The solution leverages Azure Container Registry (ACR), Azure Container Apps (ACA), Azure DevOps, and Resource Groups to implement a modern, scalable, and efficient application delivery pipeline. The architecture ensures that containerized applications are built, stored, and deployed seamlessly in a secure and controlled manner.
