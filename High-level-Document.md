@@ -7,7 +7,8 @@ I prefer to use Azure Cloud , but we can also use other cloud providers like AWS
 
 ### Application-CI
 
-![Capgemini-CI-app](https://github.com/user-attachments/assets/039faf67-b7d3-4849-8d4b-a2770926aab7)
+![Capgemini-CI-App](https://github.com/user-attachments/assets/5b1cff79-cded-4eec-bed9-5ca7e149ff82)
+
 
 
 ### Azure Cloud Infra
